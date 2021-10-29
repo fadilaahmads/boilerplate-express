@@ -24,7 +24,7 @@ app.use('/public', express.static(__dirname + '/public/'));
 });*/
 
 //Use the .env File
-app.get('/json', (req, res) => {
+/*app.get('/json', (req, res) => {
     var response;
     if(process.env.MESSAGE_STYLE === 'uppercase'){
        response = "Hello json".toUpperCase();
@@ -32,8 +32,14 @@ app.get('/json', (req, res) => {
        response = "Hello json";
     }
     res.json({ "message": response });
-  });
+  });*/
   
+//Implement a Root-Level Request Logger Middleware
+app.use(function middleware(req, res, next) {
+  const response = req.method+' '+req.path+' - '+req.ip;
+  console.log(response);
+  next();
+});
 
 
 
