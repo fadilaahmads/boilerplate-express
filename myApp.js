@@ -5,8 +5,14 @@ var app = express();
 //console.log('Hello World');
 
 //Start a Working Express Server
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.send('Hello Express'); //it can send files too
+});*/
+
+//Serve an HTML files
+absolutePath = __dirname + '/views/index.html';
+app.get('/', (req, res) => {
+  res.sendFile(absolutePath);
 });
 
 
