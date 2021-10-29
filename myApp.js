@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
 //Serve Static AssetsPassed
 app.use('/public', express.static(__dirname + '/public/'));
 
+//Serve JSON on a Specific Route
+app.get('/json', (req, res) => {
+    res.json({ "message": "Hello json" });
+});
+  
+
 
 
 
