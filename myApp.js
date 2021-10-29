@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
   res.sendFile(absolutePath);
 });
 
+//Serve Static AssetsPassed
+app.use('/public', express.static(__dirname + '/public/'));
+
 
 
 
