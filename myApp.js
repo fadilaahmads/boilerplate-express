@@ -67,6 +67,9 @@ app.get('/name', (req, res) => {
   });
 });
 
+//Use body-parser to Parse POST Requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 
